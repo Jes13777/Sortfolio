@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.action-button {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded-lg m-2;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-4 m-2;
+}
+
+.input-field {
+  @apply border border-gray-300 rounded-lg p-2 m-2;
+}
+
+.folder-item {
+  @apply flex items-center p-4 border-b border-gray-200;
+}
+
+.scan-item {
+  @apply flex items-center justify-between p-4 border-b border-gray-200;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="ScanStore" class="bg-blue-500 text-white">
+        <ActionItem ios.position="right" android.position="actionBar">
+            <Label text="&#xf067;" class="fas text-xl" tap="{{ startScan }}" />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="auto, *">
+        <!-- Category Selector -->
+        <ScrollView row="0" orientation="horizontal" class="bg-white">
+            <StackLayout orientation="horizontal" class="p-2">
+                <Button text="All" tap="{{ setCategory }}" class="action-button" />
+                <Button text="Receipts" tap="{{ setCategory }}" class="action-button" />
+                <Button text="Documents" tap="{{ setCategory }}" class="action-button" />
+                <Button text="Bills" tap="{{ setCategory }}" class="action-button" />
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Scans List -->
+        <ListView row="1" items="{{ scans }}" class="list-group">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *, auto" class="scan-item">
+                    <Label col="0" text="&#xf15c;" class="fas text-2xl text-blue-500" />
+                    <StackLayout col="1" class="ml-4">
+                        <Label text="{{ fileName }}" class="text-lg font-semibold" />
+                        <Label text="{{ category }}" class="text-sm text-gray-500" />
+                    </StackLayout>
+                    <Label col="2" text="{{ createdAt, 'dd/MM/yyyy' }}" class="text-sm text-gray-500" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>
